@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>My PWA</title>
-        <meta name="description" content="A Progressive Web App" />
+        <title>Rebuilt Match Timer</title>
+        <meta name="description" content="Match timer for FRC Rebuilt to keep track of match periods" />
 
         <!-- PWA essentials -->
         <link rel="manifest" href="manifest.json" />
@@ -19,12 +19,20 @@
 
         <!-- Fallback icon -->
         <link rel="icon" href="icons/icon-192.png" />
+
+        <script defer src="script.js"></script>
     </head>
     <body>
-        <h1>Hello PWA 👋</h1>
-        <p>This app works offline and can be installed.</p>
+        <div id="timers"></div>
 
         <script>
+            window.navigator.vibrate(500);
+        </script>
+
+
+
+
+        <!-- <script>
             if ("serviceWorker" in navigator) {
                 window.addEventListener("load", () => {
                     navigator.serviceWorker
@@ -35,6 +43,6 @@
                         );
                 });
             }
-        </script>
+        </script> -->
     </body>
 </html>
