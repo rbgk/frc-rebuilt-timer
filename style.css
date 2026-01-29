@@ -1,0 +1,10 @@
+:root {
+    --r-alliance: #ED1C24;
+    --b-alliance: #0066B3;
+    --white: #ffffff;
+}
+
+body {
+    color: var(--white);
+    background-color: var(--r-alliance);
+}
