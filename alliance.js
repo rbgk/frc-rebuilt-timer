@@ -42,7 +42,3 @@ function swapAlliance() {
             break;
     }
 }
-
-function vibrateAlert() {
-    window.navigator.vibrate([250, 50, 250, 50, 500]);
-}

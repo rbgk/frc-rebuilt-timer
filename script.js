@@ -106,7 +106,7 @@ function render() {
     if (remainingSegSec !== prevRemainingSegSec) {
         if (remainingSegSec <= 0) {
             swapAlliance();
-            window.navigator.vibrate([250, 50, 250, 50, 500]);
+            vibrate();
         }
 
         prevRemainingSegSec = remainingSegSec; // store new value
