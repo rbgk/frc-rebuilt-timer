@@ -53,5 +53,17 @@
         <button onclick="swapAlliance()">
             Swap Alliance
         </button>
+
+        <script>
+            window.addEventListener("beforeunload", (e) => {
+                e.preventDefault();
+                e.returnValue = ""; // required for Chrome
+            });
+
+            document.addEventListener("touchmove", e => {
+                e.preventDefault();
+            }, { passive: false });
+
+        </script>
     </body>
 </html>

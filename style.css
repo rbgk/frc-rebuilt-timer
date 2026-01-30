@@ -10,3 +10,7 @@ body {
     text-align: center;
     transition: background-color 0.25s ease;
 }
+
+html, body {
+    overscroll-behavior: none;
+}
