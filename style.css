@@ -7,4 +7,6 @@
 body {
     color: var(--white);
     background-color: var(--r-alliance);
+    text-align: center;
+    transition: background-color 0.25s ease;
 }
