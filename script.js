@@ -104,7 +104,7 @@ function render() {
     durationDisplay.textContent = remainingSegSec;
 
     if (remainingSegSec !== prevRemainingSegSec) {
-        if (remainingSegSec <= 2) { // heads-up alert
+        if (remainingSegSec == 7) { // heads-up alert
             vibrate();
         }
 
