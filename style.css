@@ -115,13 +115,13 @@ button:hover {
 }
 
 
-@media (orientation: portrait) {
+@media (pointer: coarse) and (orientation: portrait) {
     .controls button {
         max-width: 150px;
     }
 }
 
-@media (orientation: landscape) {
+@media (pointer: coarse) and (orientation: landscape) {
     body {
         display: flex;
         flex-direction: row;
