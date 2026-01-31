@@ -35,25 +35,32 @@
         <h1 id="phase"></h1>
         <p>Match Period</p>
 
-        <button onclick="start()">Start</button>
-        <button onclick="pause()">Pause</button>
-        <button onclick="reset()">Reset</button>
+        <button id="Reset_btn" onclick="reset()">Reset</button>
 
-        <button id="toggle">
+        <div>
+            <button id="Start_btn" onclick="start()">Start</button>
+            <button id="Pause_btn" onclick="pause()">Pause</button>
+        </div>
+
+        <button id="WinAutoToggle">
             Win Auto?
             <br>
-            <span id="WinAuto">No</span>
+            <span id="WinAuto">
+                <svg id="WinAutoNo" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ff0000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                <svg id="WinAutoYes" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#00ff00"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+            </span>
         </button>
 
-
-        <button onclick="vibrate()">
-            click for vibrate
-        </button>
-
-        <button onclick="chooseAlliance()">
+        <button id="AllianceToggle" onclick="chooseAlliance()">
             Alliance:
             <br>
-            <span id="alliance_color">Red</span>
+            <span id="alliance_color">
+                Red
+            </span>
+        </button>
+
+        <button id="Vibrate_btn" onclick="vibrate()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#ffffff"><path d="M320-120q-33 0-56.5-23.5T240-200v-560q0-33 23.5-56.5T320-840h320q33 0 56.5 23.5T720-760v560q0 33-23.5 56.5T640-120H320Zm320-80v-560H320v560h320ZM480-640q17 0 28.5-11.5T520-680q0-17-11.5-28.5T480-720q-17 0-28.5 11.5T440-680q0 17 11.5 28.5T480-640ZM0-360v-240h80v240H0Zm120 80v-400h80v400h-80Zm760-80v-240h80v240h-80Zm-120 80v-400h80v400h-80Zm-440 80v-560 560Z"/></svg>
         </button>
 
         <script>

@@ -43,12 +43,14 @@ function vibrate() {
     window.navigator.vibrate([250, 50, 250, 50, 500]);
 }
 
-const toggle = document.getElementById('toggle');
+const WinAutoToggle = document.getElementById('WinAutoToggle');
 const WinAutoStat = document.getElementById('WinAuto');
+const WinAutoNo = document.getElementById('WinAutoNo');
+const WinAutoYes = document.getElementById('WinAutoYes');
 let AutoWinner = false;
-toggle.addEventListener('click', () => {
+WinAutoToggle.addEventListener('click', () => {
     AutoWinner = !AutoWinner; // toggle state
-    AutoWinner ? WinAutoStat.textContent = "Yes" : WinAutoStat.textContent = "No"; // update button text
+    AutoWinner ? (WinAutoYes.style.display = "inline-block", WinAutoNo.style.display = "none" ): (WinAutoNo.style.display = "inline-block", WinAutoYes.style.display = "none"); // update button text
 });
 
 function chooseAlliance() {
