@@ -43,7 +43,7 @@ function vibrate() {
     let pause = 50;
     let pulse = 250;
     let one = 1000;
-    window.navigator.vibrate([one, pause, one, pause]);
+    window.navigator.vibrate([one, pause, one, pause]),
     window.navigator.vibrate([pulse, pause, pulse, pause, pulse, pause, pulse]);
 }
 
