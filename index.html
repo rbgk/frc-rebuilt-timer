@@ -26,39 +26,39 @@
     </head>
     <body id="body" onload="init()">
 
-        <h1 id="time"></h1>
-        <p>Match Time</p>
+        <div id="info">
+            <h1 id="time"></h1>
+            <p>Match Time</p>
+            <h1 id="duration"></h1>
+            <p>Seconds Remaining</p>
+            <h1 id="phase">Auto</h1>
+            <p>Match Period</p>
+        </div>
 
-        <h1 id="duration"></h1>
-        <p>Seconds Remaining</p>
+        <div class="controls">
+            <button id="Start_btn" class="ripple" onclick="start()">Start <br><span style="text-transform: lowercase; font-size: smaller;">timer</span></button>
+            <button id="Pause_btn" class="ripple" onclick="pause()">Pause <br><span style="text-transform: lowercase; font-size: smaller;">timer</span></button>
 
-        <h1 id="phase">Auto</h1>
-        <p>Match Period</p>
+            <button id="WinAutoToggle" class="ripple">
+                Win Auto?
+                <br>
+                <span id="WinAuto">
+                    <svg id="WinAutoNo" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ff0000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                    <svg id="WinAutoYes" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#00ff00"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                </span>
+            </button>
+
+            <button id="AllianceToggle" class="ripple" onclick="chooseAlliance()">
+                Alliance:
+                <br>
+                <span id="alliance_color">
+                    Red
+                </span>
+            </button>
+        </div>
 
         <button id="Reset_btn" class="ripple" onclick="reset()">
             <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e3e3e3"><path d="M480-80q-75 0-140.5-28T225-185q-49-49-77-114.5T120-440h60q0 125 87.5 212.5T480-140q125 0 212.5-87.5T780-440q0-125-85-212.5T485-740h-23l73 73-41 42-147-147 147-147 41 41-78 78h23q75 0 140.5 28T735-695q49 49 77 114.5T840-440q0 75-28 140.5T735-185q-49 49-114.5 77T480-80Z"/></svg>
-        </button>
-
-        <div>
-            <button id="Start_btn" class="ripple" onclick="start()">Start</button>
-            <button id="Pause_btn" class="ripple" onclick="pause()">Pause</button>
-        </div>
-
-        <button id="WinAutoToggle" class="ripple">
-            Win Auto?
-            <br>
-            <span id="WinAuto">
-                <svg id="WinAutoNo" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ff0000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-                <svg id="WinAutoYes" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#00ff00"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-            </span>
-        </button>
-
-        <button id="AllianceToggle" class="ripple" onclick="chooseAlliance()">
-            Alliance:
-            <br>
-            <span id="alliance_color">
-                Red
-            </span>
         </button>
 
         <button id="Vibrate_btn" class="ripple" onclick="vibrate()">
