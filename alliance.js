@@ -40,7 +40,9 @@ function swapAlliance() {
 }
 
 function vibrate() {
-    window.navigator.vibrate([250, 50, 250, 50, 500]);
+    let pause = 100;
+    let pulse = 500;
+    window.navigator.vibrate([pulse, pause, pulse, pause, pulse]);
 }
 
 const WinAutoToggle = document.getElementById('WinAutoToggle');
