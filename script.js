@@ -189,5 +189,5 @@ function reset() {
     requestAnimationFrame(render);
 
     AutoWinner = false;
-    WinAutoStat.textContent = "No";
+    WinAutoNo.style.display = "inline-block", WinAutoYes.style.display = "none";
 }
