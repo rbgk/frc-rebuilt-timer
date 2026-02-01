@@ -106,6 +106,7 @@ function render() {
     if (remainingSegSec !== prevRemainingSegSec) {
         if (remainingSegSec == 7) { // heads-up alert
             vibrate();
+            flash();
         }
 
         if (remainingSegSec == 0) {
@@ -218,6 +219,8 @@ function reset() {
 
     requestAnimationFrame(render);
 
+    // reset UI
     AutoWinner = false;
     WinAutoNo.style.display = "inline-block", WinAutoYes.style.display = "none";
+    killFlash();
 }
