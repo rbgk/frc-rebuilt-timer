@@ -70,6 +70,7 @@ let AutoWinner = false;
 WinAutoToggle.addEventListener('click', () => {
     AutoWinner = !AutoWinner; // toggle state
     AutoWinner ? (WinAutoYes.style.display = "inline-block", WinAutoNo.style.display = "none" ): (WinAutoNo.style.display = "inline-block", WinAutoYes.style.display = "none"); // update button text
+    AutoWinnerHub();
 });
 
 const flashToggle = document.getElementById('flashToggle');
@@ -121,6 +122,21 @@ function chooseAlliance() {
 
         case "blue":
             document.getElementById("alliance_color").textContent = "blue";
+            break;
+    }
+}
+
+function AutoWinnerHub() {
+    switch (phase.textContent) {
+        case "Shift 1":
+        case "Shift 2":
+        case "Shift 3":
+        case "Shift 4":
+            switchHub();
+            break;
+
+        default:
+            // do nothing
             break;
     }
 }
