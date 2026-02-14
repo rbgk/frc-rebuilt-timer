@@ -1,5 +1,5 @@
-const alliance = "alliance";
-const cookieDomain = "rbgk.github.io/frc-timer";
+const ActiveHub = "ActiveHub";
+const cookieDomain = "rbgk.github.io/frc-rebuilt-timer";
 const expireTime = 365;
 
 function getCookie(key) {
@@ -21,7 +21,8 @@ function setCookie(key, value, days, domain) {
 }
 
 function init() {
-    setCookie(alliance, "red");
+    setCookie(ActiveHub, "red");
+    alliance_color = getCookie(ActiveHub);
     document.getElementById("body").style.backgroundColor = "var(--r-alliance)";
 
     let flashSetting = localStorage.getItem("flashSetting");
@@ -42,9 +43,9 @@ function init() {
 }
 
 function switchHub() {
-    getCookie(alliance) === "red" ? setCookie(alliance, "blue") : setCookie(alliance, "red");
+    getCookie(ActiveHub) === "red" ? setCookie(ActiveHub, "blue") : setCookie(ActiveHub, "red");
 
-    switch (getCookie(alliance)) {
+    switch (getCookie(ActiveHub)) {
         case "red":
             document.getElementById("body").style.backgroundColor = "var(--r-alliance)";
             break;
@@ -111,7 +112,7 @@ function killFlash() {
 
 function chooseAlliance() {
     switchHub();
-    alliance_color = getCookie(alliance);
+    alliance_color = getCookie(ActiveHub);
 
     switch (alliance_color) {
         case "red":
