@@ -104,9 +104,9 @@ function render() {
     durationDisplay.textContent = remainingSegSec;
 
     if (remainingSegSec !== prevRemainingSegSec) {
-        if (remainingSegSec == 7) { // heads-up alert
+        if (remainingSegSec == totalFlashDurationSec) { // heads-up alert
             vibrate();
-            flash();
+            flash(brightFlashPerSecond, totalFlashDurationSec);
         }
 
         if (remainingSegSec == 0) {

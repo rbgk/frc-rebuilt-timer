@@ -80,13 +80,13 @@ let flashSetting = localStorage.getItem("flashSetting") === "true";
 flashToggle.addEventListener('click', () => {
     flashSetting = !flashSetting; // toggle state
     flashSetting ? (flashOn.style.display = "inline-block", flashOff.style.display = "none",  localStorage.setItem("flashSetting", true)) : (flashOff.style.display = "inline-block", flashOn.style.display = "none", localStorage.setItem("flashSetting", "off")); // update localStorage and toggle
-    flashSetting ? flash() : killFlash();
+    flashSetting ? flash(brightFlashPerSecond, 2) : killFlash();
 });
 
 let flashInterval;
-function flash() {
-    const brightFlashPerSecond = 4; // Count visual flash per second; 4 default
-    const totalFlashDurationSec = 5; // Visual flash for how many seconds; 5 default
+const brightFlashPerSecond = 6; // Count visual flash per second; 3 green-black pairs
+const totalFlashDurationSec = 7; // Visual flash for how many seconds; 7 seconds
+function flash(brightFlashPerSecond, totalFlashDurationSec) {
     if (flashSetting == true) { // Only flash if user enabled
         const flashDiv = document.getElementById("flashDiv");
         flashDiv.style.display = "block";
