@@ -105,7 +105,9 @@ function render() {
 
     if (remainingSegSec !== prevRemainingSegSec) {
         if (remainingSegSec == totalFlashDurationSec) { // heads-up alert
-            vibrate();
+            if (supportVibrate) {
+                vibrate();
+            }
             flash(brightFlashPerSecond, totalFlashDurationSec);
         }
 

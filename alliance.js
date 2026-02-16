@@ -1,6 +1,7 @@
 const ActiveHub = "ActiveHub";
 const cookieDomain = "rbgk.github.io/frc-rebuilt-timer";
 const expireTime = 365;
+let supportVibrate = false;
 
 function getCookie(key) {
     const value = `; ${document.cookie}`;
@@ -40,6 +41,13 @@ function init() {
         flashOn.style.display = "none";
 
     }
+
+    // check vibration feature
+    if ("vibrate" in navigator || navigator.vibrate) {
+        supportVibrate = true;
+    } else {
+        document.getElementById("Vibrate_btn").style.opacity = ".2";
+    }
 }
 
 function switchHub() {
@@ -57,10 +65,18 @@ function switchHub() {
 }
 
 function vibrate() {
-    let pause = 50;
-    let pulse = 250;
-    let one = 1000;
-    window.navigator.vibrate([one, pause, one, pause, pulse, pause, pulse, pause, pulse, pause, pulse]);
+    if (supportVibrate) {
+        let pause = 50;
+        let pulse = 250;
+        let one = 1000;
+        window.navigator.vibrate([one, pause, one, pause, pulse, pause, pulse, pause, pulse, pause, pulse]);
+    } else {
+        // for unsupported devices, this will only execute if triggered manually
+        const supportVibrateDiv = document.getElementById("supportVibrate");
+        supportVibrateDiv.classList.remove("notify");
+        void supportVibrateDiv.offsetWidth;
+        supportVibrateDiv.classList.add("notify");
+    }
 }
 
 const WinAutoToggle = document.getElementById('WinAutoToggle');
