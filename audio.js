@@ -32,5 +32,6 @@ function matchEndGame() {
 function killAudio() {
     document.querySelectorAll("audio").forEach(audio => {
         audio.pause();
+        audio.currentTime = 0;
     });
 }
