@@ -28,3 +28,9 @@ function matchSonar() {
 function matchEndGame() {
     audioEndGame.play();
 }
+
+function killAudio() {
+    document.querySelectorAll("audio").forEach(audio => {
+        audio.pause();
+    });
+}

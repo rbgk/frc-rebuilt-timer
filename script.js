@@ -234,4 +234,5 @@ function reset() {
     WinAutoNo.style.display = "inline-block", WinAutoYes.style.display = "none";
     killFlash();
     chooseAlliance(); // edge case: resyncs colors if user reset during a match period that already ran switchHub(); also flips between alliances for JIC compulsion
+    killAudio();
 }
