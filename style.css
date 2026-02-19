@@ -51,6 +51,7 @@ body {
 html, body {
     overscroll-behavior: none;
     user-select: none;
+    margin: 0;
 }
 
 button {
