@@ -91,6 +91,7 @@ function render() {
     const current = getCurrentSegment(elapsed);
 
     if (!current) {
+        matchBuzzer();
         display.textContent = "0:00";
         phase.textContent = "Match Over";
         durationDisplay.textContent = "0";
@@ -105,10 +106,13 @@ function render() {
 
     if (remainingSegSec !== prevRemainingSegSec) {
         if (remainingSegSec == totalFlashDurationSec) { // heads-up alert
-            if (supportVibrate) {
-                vibrate();
+            if (elapsed > 20000-totalFlashDurationSec*1000) {
+                matchSonar();
+                if (supportVibrate) {
+                    vibrate();
+                }
+                flash(brightFlashPerSecond, totalFlashDurationSec);
             }
-            flash(brightFlashPerSecond, totalFlashDurationSec);
         }
 
         if (remainingSegSec == 0) {
@@ -116,15 +120,18 @@ function render() {
                 // force inject the upcoming phase even though technically not there yet (deviation of 1 second, the 0th second)
                 // this is for a visual seamless transition, as the colors already change
                 case "Auto":
+                    matchBuzzer();
                     phase.textContent = "Delay";
                     break;
                 case "Delay":
+                    matchThreeBells();
                     phase.textContent = "Transition Shift";
                     break;
                 case "End Game":
                     break;
 
                 case "Transition Shift":
+                    matchShift();
                     if (!AutoWinner) {
                         // if we are red and blue won auto, then we do not change colors
                         // if we are blue and red won auto, then we do not change colors
@@ -139,21 +146,25 @@ function render() {
                     }
 
                 case "Shift 1":
+                    matchShift();
                     switchHub();
                     phase.textContent = "Shift 2";
                     break;
 
                 case "Shift 2":
+                    matchShift();
                     switchHub();
                     phase.textContent = "Shift 3";
                     break;
 
                 case "Shift 3":
+                    matchShift();
                     switchHub();
                     phase.textContent = "Shift 4";
                     break;
 
                 case "Shift 4":
+                    matchEndGame();
                     if (!AutoWinner) {
                         // if we are red and blue won auto, we change color
                         // if we are blue and red won auto, we change color
@@ -186,6 +197,7 @@ render();
 // ----- Controls -----
 function start() {
     if (state.running) return;
+    if (totalElapsed() == 0) matchCavalryCharge();
     state.running = true;
     state.startTimestamp = Date.now();
     saveState();

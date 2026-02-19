@@ -1,7 +1,13 @@
-const CACHE_NAME = 'pwa-cache-v1';
+const CACHE_NAME = 'pwa-cache-v2';
 const ASSETS = [
   'index.html',
-  'manifest.json'
+  'manifest.json',
+  'audio/CavalryCharge.wav',
+  'audio/Buzzer.wav',
+  'audio/ThreeBells.wav',
+  'audio/Shift.wav',
+  'audio/Sonar.wav',
+  'audio/EndGame.wav'
 ];
 
 self.addEventListener('install', event => {

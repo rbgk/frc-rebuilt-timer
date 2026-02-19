@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="style.css">
         <script defer src="alliance.js"></script>
         <script defer src="script.js"></script>
+        <script defer src="audio.js"></script>
     </head>
     <body id="body" onload="init()">
 
@@ -80,6 +81,13 @@
         <span id="supportVibrate">
             Vibrate not supported by device
         </span>
+
+        <audio id="audioCavalryCharge" src="./audio/CavalryCharge.wav" ></audio>
+        <audio id="audioBuzzer" src="./audio/Buzzer.wav" ></audio> 
+        <audio id="audioThreeBells" src="./audio/ThreeBells.wav" ></audio>
+        <audio id="audioShift" src="./audio/Shift.wav" ></audio>
+        <audio id="audioEndGame" src="./audio/EndGame.wav" ></audio>
+        <audio id="audioSonar" src="./audio/Sonar.wav" ></audio>
 
         <script>
             window.addEventListener("beforeunload", (e) => {
