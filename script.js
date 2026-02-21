@@ -1,6 +1,6 @@
 const rawSegments = [
     { name: "Auto",               start: "0:20", end: "0:00" },
-    { name: "Delay",              start: "0:03", end: "0:00" },
+    { name: "Delay",              start: "0:05", end: "0:00" },
     { name: "Transition Shift",   start: "2:20", end: "2:10" },
     { name: "Shift 1",            start: "2:10", end: "1:45" },
     { name: "Shift 2",            start: "1:45", end: "1:20" },
