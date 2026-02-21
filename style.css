@@ -131,6 +131,7 @@ button:hover {
 #flashDiv {
     position: fixed;
     bottom: 15px;
+    z-index: -1;
     left: 50%;
     transform: translate(-50%);
     width: 60vw;
@@ -141,12 +142,42 @@ button:hover {
 
 
 @media (pointer: coarse) and (orientation: portrait) {
-    .controls button {
-        max-width: 150px;
+    .controls {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-flow: row;
+        gap: 10px;
+        justify-items: center;
     }
 
     button:hover {
         opacity: 100%;
+    }
+}
+
+@media (300px <= width <= 375px) {
+    .controls {
+        margin-top: 25px;
+    }
+
+    #Start_btn, #Pause_btn, #WinAutoToggle, #AllianceToggle {
+        margin: 5px 0px;
+        height: 80px;
+        aspect-ratio: 5/3;
+        font-size: 16px;
+    }
+}
+
+@media (375px <= width <= 450px) {
+    .controls {
+        margin-top: 25px;
+    }
+
+    #Start_btn, #Pause_btn, #WinAutoToggle, #AllianceToggle {
+        margin: 5px 0px;
+        height: 100px;
+        aspect-ratio: 5/3;
+        font-size: 16px;
     }
 }
 
@@ -160,7 +191,7 @@ button:hover {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-auto-flow: row;
-        gap: 10px
+        gap: 10px;
     }
 
     button:hover {
