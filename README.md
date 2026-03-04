@@ -20,4 +20,4 @@ Refer to the [2026 Game Manual](https://firstfrc.blob.core.windows.net/frc2026/M
 The timer app is fully legal and compliant with Rule G302. Drive Team is allowed to use this during matches if they would like. 
 
 
-[Full match Demo Video](https://github.com/rbgk/frc-rebuilt-timer/Rebuilt_Timer_demo.mp4)
+[Full match Demo Video](https://rbgk.github.io/frc-rebuilt-timer/Rebuilt_Timer_demo.mp4)
