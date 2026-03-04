@@ -72,10 +72,7 @@ function vibrate() {
         window.navigator.vibrate([one, pause, one, pause, pulse, pause, pulse, pause, pulse, pause, pulse]);
     } else {
         // for unsupported devices, this will only execute if triggered manually
-        const supportVibrateDiv = document.getElementById("supportVibrate");
-        supportVibrateDiv.classList.remove("notify");
-        void supportVibrateDiv.offsetWidth;
-        supportVibrateDiv.classList.add("notify");
+        warnUser("Vibrate not supported by device");
     }
 }
 

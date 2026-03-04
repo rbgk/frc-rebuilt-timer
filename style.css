@@ -199,7 +199,7 @@ button:hover {
     }
 }
 
-#supportVibrate {
+#warningBox {
     position: fixed;
     bottom: 25px;
     left: 50%;
@@ -209,9 +209,10 @@ button:hover {
     border-radius: 10px;
     padding: 15px;
     opacity: 0;
+    font-size: small;
 }
 
-#supportVibrate.notify {
+#warningBox.notify {
     animation: flyIn 2.5s cubic-bezier(0.2,0.9,0.3,1) forwards;
 }
 
