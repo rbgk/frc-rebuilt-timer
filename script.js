@@ -95,6 +95,7 @@ function render() {
         display.textContent = "0:00";
         phase.textContent = "Match Over";
         durationDisplay.textContent = "0";
+        reset(); // added by request to auto reset
         return;
     }
 
